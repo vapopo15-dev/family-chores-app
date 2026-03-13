@@ -10,7 +10,7 @@ body {
 /* アプリ全体の幅を調整（大画面でも中央に綺麗に収まる） */
 .app {
   width: 92%;
-  max-width: 520px; /* iPhone 16/17 でも広すぎない */
+  max-width: 650px; /* iPhone 16/17 でも広すぎない */
   margin: 24px auto;
   background: #ffffff;
   border-radius: 16px;
