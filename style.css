@@ -4,17 +4,17 @@ body {
   background: #f4f5fb;
   margin: 0;
   padding: 0;
-  font-size: clamp(16px, 2.6vw, 20px); /* ← 全体的に大きく */
+  font-size: clamp(16px, 2.6vw, 20px); /* 全体の文字を大きく */
 }
 
-/* アプリ全体の幅を調整（見切れ防止） */
+/* アプリ全体の幅（見切れ防止 & 大画面最適化） */
 .app {
-  width: 96%;              /* ← 余白を減らして見切れ防止 */
+  width: 96%;              /* 余白を減らして見切れ防止 */
   max-width: 650px;
   margin: 24px auto;
   background: #ffffff;
   border-radius: 16px;
-  padding: 16px;           /* ← padding 少し減らす */
+  padding: 16px;           /* 余白を少し減らす */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -23,7 +23,7 @@ h1 {
   text-align: center;
   color: #333;
   margin-bottom: 16px;
-  font-size: clamp(22px, 4.5vw, 30px); /* ← さらに大きく */
+  font-size: clamp(22px, 4.5vw, 30px);
 }
 
 /* 家事追加フォーム */
@@ -36,10 +36,10 @@ h1 {
 
 .add-task input,
 .add-task select {
-  padding: 14px 16px;       /* ← select を大きく */
+  padding: 14px 16px;       /* select を大きく押しやすく */
   border-radius: 10px;
   border: 1px solid #ddd;
-  font-size: clamp(16px, 3vw, 20px); /* ← 文字も大きく */
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 .add-task button {
@@ -57,28 +57,33 @@ h1 {
   background: #5876e0;
 }
 
-/* 家事カード */
+/* 家事カード（余白をギュッと圧縮） */
 .task-card {
   background: #f7f8ff;
   border-radius: 12px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
+  padding: 8px 10px; /* ← 余白を減らす */
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px; /* ← 全体の余白を詰める */
   width: 100%;
 }
 
-/* カード内のヘッダー */
-.task-header {
+/* カード内のヘッダー・フッター（折り返し可能 & 余白圧縮） */
+.task-header,
+.task-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* ← 飛び出し防止 */
+  gap: 4px;        /* ← 行間を詰める */
 }
 
+/* タイトル（可変幅で飛び出し防止） */
 .task-title {
+  flex: 1;
   font-weight: 600;
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(15px, 2.6vw, 18px);
 }
 
 .task-person {
@@ -88,9 +93,6 @@ h1 {
 
 /* カードのフッター */
 .task-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: clamp(14px, 2.5vw, 16px);
   color: #777;
 }
