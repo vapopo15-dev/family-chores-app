@@ -4,17 +4,17 @@ body {
   background: #f4f5fb;
   margin: 0;
   padding: 0;
-  font-size: clamp(16px, 2.6vw, 20px); /* 全体の文字を大きく */
+  font-size: clamp(16px, 2.6vw, 20px); /* スマホで大きく、PCで抑えめ */
 }
 
-/* アプリ全体の幅（見切れ防止 & 大画面最適化） */
+/* アプリ全体の幅（スマホ最適化 & 見切れ防止） */
 .app {
-  width: 96%;              /* 余白を減らして見切れ防止 */
+  width: 96%;
   max-width: 650px;
   margin: 24px auto;
   background: #ffffff;
   border-radius: 16px;
-  padding: 16px;           /* 余白を少し減らす */
+  padding: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -36,7 +36,7 @@ h1 {
 
 .add-task input,
 .add-task select {
-  padding: 14px 16px;       /* select を大きく押しやすく */
+  padding: 14px 16px;
   border-radius: 10px;
   border: 1px solid #ddd;
   font-size: clamp(16px, 3vw, 20px);
@@ -65,7 +65,7 @@ h1 {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap: 4px; /* ← 全体の余白を詰める */
+  gap: 4px;
   width: 100%;
 }
 
@@ -76,7 +76,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap; /* ← 飛び出し防止 */
-  gap: 4px;        /* ← 行間を詰める */
+  gap: 4px;
 }
 
 /* タイトル（可変幅で飛び出し防止） */
@@ -110,4 +110,36 @@ h1 {
 
 .complete-btn.done {
   background: #9e9e9e;
+}
+
+/* PC（横幅 800px 以上）のときだけ調整） */
+@media (min-width: 800px) {
+
+  body {
+    font-size: 16px; /* PC では文字を少し抑える */
+  }
+
+  .app {
+    max-width: 600px; /* PC では広がりすぎないように */
+    padding: 20px;
+  }
+
+  .task-card {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .task-title {
+    font-size: 18px;
+  }
+
+  .task-footer,
+  .task-person {
+    font-size: 14px;
+  }
+
+  .complete-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
 }
