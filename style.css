@@ -4,17 +4,17 @@ body {
   background: #f4f5fb;
   margin: 0;
   padding: 0;
-  font-size: clamp(14px, 2.2vw, 18px); /* 画面に応じて自動調整 */
+  font-size: clamp(16px, 2.6vw, 20px); /* ← 全体的に大きく */
 }
 
-/* アプリ全体の幅を調整（大画面でも中央に綺麗に収まる） */
+/* アプリ全体の幅を調整（見切れ防止） */
 .app {
-  width: 92%;
-  max-width: 650px; /* iPhone 16/17 でも広すぎない */
+  width: 96%;              /* ← 余白を減らして見切れ防止 */
+  max-width: 650px;
   margin: 24px auto;
   background: #ffffff;
   border-radius: 16px;
-  padding: 20px;
+  padding: 16px;           /* ← padding 少し減らす */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -23,33 +23,34 @@ h1 {
   text-align: center;
   color: #333;
   margin-bottom: 16px;
-  font-size: clamp(20px, 4vw, 28px);
+  font-size: clamp(22px, 4.5vw, 30px); /* ← さらに大きく */
 }
 
 /* 家事追加フォーム */
 .add-task {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.add-task input {
-  padding: 10px 12px;
-  border-radius: 8px;
+.add-task input,
+.add-task select {
+  padding: 14px 16px;       /* ← select を大きく */
+  border-radius: 10px;
   border: 1px solid #ddd;
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(16px, 3vw, 20px); /* ← 文字も大きく */
 }
 
 .add-task button {
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 14px 16px;
+  border-radius: 10px;
   border: none;
   background: #6c8cff;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 .add-task button:hover {
@@ -60,12 +61,12 @@ h1 {
 .task-card {
   background: #f7f8ff;
   border-radius: 12px;
-  padding: 12px 14px;
-  margin-bottom: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  width: 100%; /* 画面幅にフィット */
+  gap: 8px;
+  width: 100%;
 }
 
 /* カード内のヘッダー */
@@ -77,11 +78,11 @@ h1 {
 
 .task-title {
   font-weight: 600;
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 .task-person {
-  font-size: clamp(12px, 2vw, 14px);
+  font-size: clamp(14px, 2.5vw, 16px);
   color: #666;
 }
 
@@ -90,18 +91,18 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: clamp(12px, 2vw, 14px);
+  font-size: clamp(14px, 2.5vw, 16px);
   color: #777;
 }
 
 /* 完了ボタン */
 .complete-btn {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
   border: none;
   background: #4caf50;
   color: white;
-  font-size: clamp(12px, 2vw, 14px);
+  font-size: clamp(14px, 2.5vw, 16px);
   cursor: pointer;
 }
 
