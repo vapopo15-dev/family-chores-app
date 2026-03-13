@@ -91,20 +91,31 @@ h1 {
   color: #666;
 }
 
-/* カードのフッター */
+/* カード内のヘッダー・フッター（距離を詰める） */
+.task-header,
 .task-footer {
-  font-size: clamp(14px, 2.5vw, 16px);
-  color: #777;
+  display: flex;
+  justify-content: flex-start; /* ← 左寄せに変更 */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px; /* ← 自然な余白 */
 }
 
-/* 完了ボタン */
+/* タイトル（可変幅で自然に伸びる） */
+.task-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: clamp(15px, 2.6vw, 18px);
+}
+
+/* 完了ボタン（追加ボタンと同じサイズ感に） */
 .complete-btn {
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 10px 16px; /* ← 統一 */
+  border-radius: 10px;
   border: none;
   background: #4caf50;
   color: white;
-  font-size: clamp(14px, 2.5vw, 16px);
+  font-size: clamp(16px, 3vw, 20px);
   cursor: pointer;
 }
 
