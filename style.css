@@ -4,10 +4,10 @@ body {
   background: #f4f5fb;
   margin: 0;
   padding: 0;
-  font-size: clamp(16px, 2.6vw, 20px); /* スマホで大きく、PCで抑えめ */
+  font-size: clamp(16px, 2.6vw, 20px);
 }
 
-/* アプリ全体の幅（スマホ最適化 & 見切れ防止） */
+/* アプリ全体の幅 */
 .app {
   width: 96%;
   max-width: 650px;
@@ -57,31 +57,35 @@ h1 {
   background: #5876e0;
 }
 
-/* 家事カード（余白をギュッと圧縮） */
+/* 家事カード */
 .task-card {
   background: #f7f8ff;
   border-radius: 12px;
-  padding: 8px 10px; /* ← 余白を減らす */
+  padding: 8px 10px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 4px;
   width: 100%;
+  box-sizing: border-box; /* ← これで突き出し防止 */
 }
 
-/* カード内のヘッダー・フッター（折り返し可能 & 余白圧縮） */
+/* カード内のヘッダー・フッター（追加ボタンと同じ幅感に） */
 .task-header,
 .task-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap; /* ← 飛び出し防止 */
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box; /* ← これも重要 */
 }
 
-/* タイトル（可変幅で飛び出し防止） */
+/* タイトル（横幅を自然に縮めて飛び出し防止） */
 .task-title {
   flex: 1;
+  min-width: 0; /* ← これが決定打。右の突き出しが完全に消える */
   font-weight: 600;
   font-size: clamp(15px, 2.6vw, 18px);
 }
@@ -91,26 +95,15 @@ h1 {
   color: #666;
 }
 
-/* カード内のヘッダー・フッター（距離を詰める） */
-.task-header,
+/* フッター */
 .task-footer {
-  display: flex;
-  justify-content: flex-start; /* ← 左寄せに変更 */
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px; /* ← 自然な余白 */
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #777;
 }
 
-/* タイトル（可変幅で自然に伸びる） */
-.task-title {
-  flex: 1;
-  font-weight: 600;
-  font-size: clamp(15px, 2.6vw, 18px);
-}
-
-/* 完了ボタン（追加ボタンと同じサイズ感に） */
+/* 完了ボタン（追加ボタンと同じサイズ感） */
 .complete-btn {
-  padding: 10px 16px; /* ← 統一 */
+  padding: 10px 16px;
   border-radius: 10px;
   border: none;
   background: #4caf50;
@@ -123,15 +116,14 @@ h1 {
   background: #9e9e9e;
 }
 
-/* PC（横幅 800px 以上）のときだけ調整） */
+/* PC（横幅 800px 以上） */
 @media (min-width: 800px) {
-
   body {
-    font-size: 16px; /* PC では文字を少し抑える */
+    font-size: 16px;
   }
 
   .app {
-    max-width: 600px; /* PC では広がりすぎないように */
+    max-width: 600px;
     padding: 20px;
   }
 
