@@ -1,4 +1,4 @@
-const CACHE_NAME = "app-cache-v5"; // ← バージョンを上げる
+const CACHE_NAME = "app-cache-v6"; // ← バージョンを上げる
 
 const urlsToCache = [
   "./",

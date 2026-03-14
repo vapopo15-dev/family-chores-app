@@ -9,6 +9,7 @@ body {
 
 /* アプリ全体の幅 */
 .app {
+  overflow-x: hidden;
   width: 96%;
   max-width: 650px;
   margin: 24px auto;
@@ -73,6 +74,7 @@ h1 {
 /* カード内のヘッダー・フッター（追加ボタンと同じ幅感に） */
 .task-header,
 .task-footer {
+  min-width: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
