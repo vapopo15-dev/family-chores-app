@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1,
+                 maximum-scale=1,
+                 user-scalable=no,
+                 viewport-fit=cover">
+
   <title>家族の家事アプリ</title>
+
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-  }
-</script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </head>
+
 <body>
   <div class="app">
     <h1>家族の家事</h1>
@@ -19,10 +28,10 @@
     <div class="add-task">
       <input id="taskTitle" type="text" placeholder="家事名（例：ゴミ出し）" />
       <select id="taskPerson">
-  <option value="">担当者を選択</option>
-  <option value="直人">直人</option>
-  <option value="礼雄">礼雄</option>
- </select>
+        <option value="">担当者を選択</option>
+        <option value="直人">直人</option>
+        <option value="礼雄">礼雄</option>
+      </select>
       <button id="addTaskBtn">追加</button>
     </div>
 
